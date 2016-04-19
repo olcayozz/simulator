@@ -11,7 +11,7 @@ public class Simulator_q1 {
 	public static int SystemSize = 3;
 	public static int[] initialClocks = { 1, 4, 9 };
 	public static int Clock = 0;
-	public static int iterator = 10;
+	public static int iterator = 20;
 	public static Worker RepairMan = new Worker();
 	
 	/**
@@ -75,7 +75,7 @@ public class Simulator_q1 {
 	
 		clockLine += String.valueOf(RepairMan.QueSize())  + seperator;
 		clockLine += RepairMan.getStatus().toString() + seperator;
-		clockLine += String.valueOf(RepairMan.getProcessTime());
+		//clockLine += String.valueOf(RepairMan.getProcessTime());
 		System.out.println(clockLine);
 	}
 }
