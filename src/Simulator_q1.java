@@ -21,7 +21,7 @@ public class Simulator_q1 {
 		Initialize();
 		WriteClocks();
 		
-		for(int m = 0; m<iterator; m++){
+		for(int m = 0; m<iterator; m++){ //ilk 10 işleme kadar devam et.
 			Clock = GetNextEventTime();
 			if(RepairMan.getClock() - Clock == 0)//DEPARTURE
 				RepairMan.Repaired();
@@ -30,6 +30,7 @@ public class Simulator_q1 {
 				if( Machines.get(i).getClock() - Clock == 0 ) {
 					RepairMan.Repair(Machines.get(i));
 				}
+			
 			WriteClocks();
 		}
 	}
@@ -63,7 +64,9 @@ public class Simulator_q1 {
 			if(Machines.get(j).getStatus() == Status.OUT_OF_SERVICE)
 				clockLine += "-" + seperator;
 			else
-				clockLine += String.valueOf(Machines.get(j).getClock()) + seperator;
+				clockLine += String.valueOf(Machines.get(j).getClock()) + ";" 
+						  + (String.valueOf(Machines.get(j).getProcessTime())) + ";" 
+						  + (String.valueOf(Machines.get(j).getRepairTime())) + seperator;
 		
 		if( RepairMan.getStatus() == Status.IDLE )
 			clockLine += String.valueOf("-") + seperator;
@@ -71,7 +74,8 @@ public class Simulator_q1 {
 			clockLine += String.valueOf(RepairMan.getClock()) + seperator;
 	
 		clockLine += String.valueOf(RepairMan.QueSize())  + seperator;
-		clockLine += RepairMan.getStatus().toString();
+		clockLine += RepairMan.getStatus().toString() + seperator;
+		clockLine += String.valueOf(RepairMan.getProcessTime());
 		System.out.println(clockLine);
 	}
 }

@@ -1,5 +1,5 @@
 public abstract class Processor {	
-	private int processTime = 10;
+	private int processTime = 0;
 	private int clock = 0;
 	private int index = 0;
 	private Status status = Status.IDLE;
@@ -21,13 +21,17 @@ public abstract class Processor {
 	}
 
 	public int getProcessTime() {
-		return processTime;
+		return this.processTime;
 	}
 
 	public void setProcessTime(int processTime) {
 		this.processTime = processTime;
 	}
-
+/*
+	public void setProcessTime() {
+		this.processTime = SimulatorUtility.randomGenerator();
+	}
+	*/
 	public Status getStatus() {
 		return status;
 	}
