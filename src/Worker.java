@@ -12,6 +12,7 @@ public class Worker extends Processor {
 		repairedMachine.setStatus(Status.BUSY);
 		repairedMachine.setProcessTime(SimulatorUtility.randomGenerator());//bozulan makinanın bir sonraki bozulma zamanını random verdik.
 		repairedMachine.setClock(repairedMachine.getProcessTime()+this.getClock());
+		repairedMachine.setRepairTime(SimulatorUtility.randomGenerator());//bozulan makinanın bir sonraki tamir suresini random verdik.
 		
 		this.Que.remove(0);
 		if(this.Que.size()>0) 

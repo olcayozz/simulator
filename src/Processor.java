@@ -2,6 +2,7 @@ public abstract class Processor {
 	private int processTime = 0;
 	private int clock = 0;
 	private int index = 0;
+	private int totalWorkinTime= 0;
 	private Status status = Status.IDLE;
 	
 	public int getClock() {
@@ -38,5 +39,13 @@ public abstract class Processor {
 
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+
+	public int getTotalWorkinTime() {
+		return totalWorkinTime;
+	}
+
+	public void setTotalWorkinTime(int totalWorkinTime) {
+		this.totalWorkinTime = totalWorkinTime;
 	}
 }

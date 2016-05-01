@@ -61,13 +61,14 @@ public class Simulator_q1 {
 		seperator = "		";
 		clockLine = String.valueOf(Clock) + seperator;
 		for(int j=0; j< Machines.size(); j++)
-			if(Machines.get(j).getStatus() == Status.OUT_OF_SERVICE)
+			if(Machines.get(j).getStatus() == Status.OUT_OF_SERVICE){
 				clockLine += "-" + seperator;
-			else
+			}
+			else{
 				clockLine += String.valueOf(Machines.get(j).getClock()) + ";" 
 						  + (String.valueOf(Machines.get(j).getProcessTime())) + ";" 
 						  + (String.valueOf(Machines.get(j).getRepairTime())) + seperator;
-		
+			}
 		if( RepairMan.getStatus() == Status.IDLE )
 			clockLine += String.valueOf("-") + seperator;
 		else
