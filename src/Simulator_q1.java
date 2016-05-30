@@ -11,7 +11,7 @@ public class Simulator_q1 {
 	public static int SystemSize = 3;
 	public static int[] initialClocks = { 1, 4, 9 };
 	public static int Clock = 0;
-	public static int iterator = 20;
+	public static int iterator = 120;
 	public static Worker RepairMan = new Worker();
 	
 	/**
